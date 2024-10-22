@@ -16,7 +16,7 @@ const skills = {
     { icon: <FaJs size={40} className="text-yellow-500" />, name: 'JavaScript' },
     { icon: <SiTypescript size={40} className="text-blue-600" />, name: 'TypeScript' },
     { icon: <FaReact size={40} className="text-blue-500" />, name: 'React' },
-    { icon: <SiNextdotjs size={40} className="text-black" />, name: 'Next.js' },
+    { icon: <SiNextdotjs size={40} className="text-gray-800" />, name: 'Next.js' },
     { icon: <FaBootstrap size={40} className="text-purple-600" />, name: 'Bootstrap' },
     { icon: <SiTailwindcss size={40} className="text-teal-400" />, name: 'Tailwind' },
     { icon: <SiRedux size={40} className="text-purple-700" />, name: 'Redux' },
@@ -24,7 +24,7 @@ const skills = {
   backend: [
     { icon: <FaNodeJs size={40} className="text-green-500" />, name: 'Node.js' },
     { icon: <SiMongodb size={40} className="text-green-600" />, name: 'MongoDB' },
-    { icon: <SiExpress size={40} className="text-black" />, name: 'Express' },
+    { icon: <SiExpress size={40} className="text-gray-800" />, name: 'Express' },
     { icon: <SiFirebase size={40} className="text-yellow-600" />, name: 'Firebase' },
     { icon: <FaDatabase size={40} className="text-gray-500" />, name: 'SQL' },
     { icon: <SiSequelize size={40} className="text-blue-700" />, name: 'Sequelize' },
@@ -32,16 +32,16 @@ const skills = {
   ],
   others: [
     { icon: <FaGit size={40} className="text-orange-600" />, name: 'Git' },
-    { icon: <FaGithub size={40} className="text-black" />, name: 'GitHub' },
+    { icon: <FaGithub size={40} className="text-gray-800" />, name: 'GitHub' },
     { icon: <SiJest size={40} className="text-red-600" />, name: 'Jest' },
     { icon: <SiVite size={40} className="text-purple-500" />, name: 'Vite' },
     { icon: <SiWebpack size={40} className="text-blue-600" />, name: 'Webpack' },
-    { icon: <SiVercel size={40} className="text-black" />, name: 'Vercel' },
+    { icon: <SiVercel size={40} className="text-gray-800" />, name: 'Vercel' },
   ],
 };
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [language, setLanguage] = useState('es');
 
   useEffect(() => {
@@ -141,7 +141,7 @@ export default function Home() {
             title="Doflamingo Joyas"
             description="Tienda de joyas online con React, Tailwind CSS, Node.js y MongoDB."
             link="https://github.com/Ferdeveloperr/doflamingo-joyas"
-            video="/doflamingo-demo.mp4"
+            video="/doflamingoTest.mp4"
           />
           <ProjectCard
             title="Kaizen Fitness"
@@ -172,7 +172,7 @@ export default function Home() {
         <p className="text-lg leading-relaxed">
           {translations[language].contactDescription}
           <br />
-          <a href="mailto:fernandogomez@example.com" className="text-blue-500 underline">fernandogomez@example.com</a>
+          <a href="mailto:fernandogomez@example.com" className="text-blue-500 underline">fernandojgom1395@gmail.com</a>
         </p>
       </section>
 
