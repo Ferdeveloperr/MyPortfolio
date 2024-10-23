@@ -228,10 +228,11 @@ export default function Home() {
               type="text"
               id="nombre"
               name="nombre"
+              placeholder='Ingresa tu nombre'
               value={formData.nombre}
               onChange={handleChange}
               onBlur={() => validateField('nombre', formData.nombre)}
-              className="w-full p-2 rounded bg-white text-white border border-gray-500"
+              className="w-full p-2 rounded bg-white text-black border border-gray-500"
             />
             {formErrors.nombre && <span className="text-red-500">{formErrors.nombre}</span>}
           </div>
@@ -241,10 +242,11 @@ export default function Home() {
               type="email"
               id="email"
               name="email"
+              placeholder='Ingresa tu email'
               value={formData.email}
               onChange={handleChange}
               onBlur={() => validateField('email', formData.email)}
-              className="w-full p-2 rounded bg-white text-white border border-gray-500"
+              className="w-full p-2 rounded bg-white text-black border border-gray-500"
             />
             {formErrors.email && <span className="text-red-500">{formErrors.email}</span>}
           </div>
@@ -253,10 +255,11 @@ export default function Home() {
             <textarea
               id="mensaje"
               name="mensaje"
+              placeholder='Ingresa tu mensaje'
               value={formData.mensaje}
               onChange={handleChange}
               onBlur={() => validateField('mensaje', formData.mensaje)}
-              className="w-full p-2 rounded bg-white text-white border border-gray-500"
+              className="w-full p-2 rounded bg-white text-black border border-gray-500"
             ></textarea>
             {formErrors.mensaje && <span className="text-red-500">{formErrors.mensaje}</span>}
           </div>
