@@ -5,10 +5,11 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import Swal from 'sweetalert2';
-import { FaMoon, FaSun, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGit, FaGithub, FaBootstrap, FaDatabase } from 'react-icons/fa'; 
-import { FiFlag } from 'react-icons/fi';
-import { SiTypescript, SiNextdotjs, SiRedux, SiTailwindcss, SiFirebase, SiExpress, SiPostgresql, SiMongodb, SiSequelize, SiJest, SiVite, SiWebpack, SiVercel } from 'react-icons/si';
+import { FaMoon, FaSun } from 'react-icons/fa'; 
+
 import { ClipLoader } from 'react-spinners'
+import dynamic from 'next/dynamic';
+
 
 
 const categories = {
@@ -16,6 +17,28 @@ const categories = {
   backend: 'Backend',
   others: 'Otros',
 };
+
+
+
+const FaHtml5 = dynamic(() => import('react-icons/fa').then(mod => mod.FaHtml5), { ssr: false });
+const FaCss3Alt = dynamic(() => import('react-icons/fa').then(mod => mod.FaCss3Alt), { ssr: false });
+const FaJs = dynamic(() => import('react-icons/fa').then(mod => mod.FaJs), { ssr: false });
+const SiTypescript = dynamic(() => import('react-icons/si').then(mod => mod.SiTypescript), { ssr: false });
+const FaReact = dynamic(() => import('react-icons/fa').then(mod => mod.FaReact), { ssr: false });
+const SiNextdotjs = dynamic(() => import('react-icons/si').then(mod => mod.SiNextdotjs), { ssr: false });
+const FaBootstrap = dynamic(() => import('react-icons/fa').then(mod => mod.FaBootstrap), { ssr: false });
+const SiTailwindcss = dynamic(() => import('react-icons/si').then(mod => mod.SiTailwindcss), { ssr: false });
+const SiRedux = dynamic(() => import('react-icons/si').then(mod => mod.SiRedux), { ssr: false });
+const FaNodeJs = dynamic(() => import('react-icons/fa').then(mod => mod.FaNodeJs), { ssr: false });
+const SiMongodb = dynamic(() => import('react-icons/si').then(mod => mod.SiMongodb), { ssr: false });
+const SiExpress = dynamic(() => import('react-icons/si').then(mod => mod.SiExpress), { ssr: false });
+const SiFirebase = dynamic(() => import('react-icons/si').then(mod => mod.SiFirebase), { ssr: false });
+const FaGit = dynamic(() => import('react-icons/fa').then(mod => mod.FaGit), { ssr: false });
+const FaGithub = dynamic(() => import('react-icons/fa').then(mod => mod.FaGithub), { ssr: false });
+const SiJest = dynamic(() => import('react-icons/si').then(mod => mod.SiJest), { ssr: false });
+const SiVite = dynamic(() => import('react-icons/si').then(mod => mod.SiVite), { ssr: false });
+const SiWebpack = dynamic(() => import('react-icons/si').then(mod => mod.SiWebpack), { ssr: false });
+const SiVercel = dynamic(() => import('react-icons/si').then(mod => mod.SiVercel), { ssr: false });
 
 const skills = {
   frontend: [
@@ -34,9 +57,6 @@ const skills = {
     { icon: <SiMongodb size={40} className="text-green-600" />, name: 'MongoDB' },
     { icon: <SiExpress size={40} className="text-gray-800" />, name: 'Express' },
     { icon: <SiFirebase size={40} className="text-yellow-600" />, name: 'Firebase' },
-    { icon: <FaDatabase size={40} className="text-gray-500" />, name: 'SQL' },
-    { icon: <SiSequelize size={40} className="text-blue-700" />, name: 'Sequelize' },
-    { icon: <SiPostgresql size={40} className="text-blue-600" />, name: 'PostgreSQL' },
   ],
   others: [
     { icon: <FaGit size={40} className="text-orange-600" />, name: 'Git' },
@@ -165,11 +185,11 @@ export default function Home() {
             className="flex items-center space-x-6"
           >
             <Image
-              src="/profile.jpeg"
+              src="https://res.cloudinary.com/dzzec7hzl/image/upload/v1731432716/WhatsApp_Image_2023-11-20_at_15.41.27_56d89682_li0wws.jpg"
               alt="Foto de Fernando Gómez"
-              width={200}
-              height={200}
-              className="rounded-lg shadow-lg border-4"
+              width={120}
+              height={120}
+              className="rounded-lg shadow-lg border-2"
             />
             <div className="text-left">
               <h1 className="text-5xl font-bold text-gold">{translations[language].name}</h1>
@@ -188,26 +208,28 @@ export default function Home() {
         >
           {translations[language].projectsTitle}
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
           <ProjectCard
             title="Doflamingo Joyas"
             description="Tienda de joyas online con React, Tailwind CSS, Node.js y MongoDB."
             link="https://github.com/Ferdeveloperr/doflamingo-joyas"
-            video="/doflamingoTest.mp4"
+            video="https://res.cloudinary.com/dzzec7hzl/video/upload/v1730914170/20240911_121757_nfmvet.mp4"
           />
           <ProjectCard
             title="Kaizen Fitness"
             description="Plataforma de coaching online con React, Firebase y Tailwind CSS."
-            link="https://github.com/Ferdeveloperr/kaizen-fitness"
-            video="/kaizen-demo.mp4"
+            link="https://github.com/Ferdeveloperr/KaizenFrontend"
+            video="https://res.cloudinary.com/dzzec7hzl/video/upload/v1731007383/WhatsApp_Video_2024-11-07_at_4.19.50_PM_kibzkq.mp4"
           />
-          <ProjectCard
-            title="Portfolio Personal"
-            description="Mi portfolio profesional construido con Next.js y Framer Motion."
-            link="https://github.com/Ferdeveloperr/portfolio"
-            video="/portfolio-demo.mp4"
+          
+          <ProjectCard 
+            title="CotizacionesYA"
+            description="Aplicacion web desarrollada de manera agil y eficiente para obtener cotizaciones"
+            link="https://github.com/Ferdeveloperr/CotizacionesYA"
+            video="https://res.cloudinary.com/dzzec7hzl/video/upload/v1731007393/WhatsApp_Video_2024-11-07_at_4.21.43_PM_woohxo.mp4"
           />
-        </div>
+          </div>
+        
       </section>
 
       <section className="mt-16 text-center">
@@ -283,28 +305,29 @@ export default function Home() {
 const SkillsSection = ({ language, translations, skills }) => {
   return (
     <section id="skills" className="text-center mt-16">
-      <h2 className="text-3xl font-bold mb-6 text-gold">{language === 'es' ? 'Habilidades' : 'Skills'}</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {Object.keys(categories).map((category) => (
-          <div key={category}>
-            <h3 className="text-2xl font-bold mb-4 text-gold">{categories[category]}</h3>
-            <div className="grid grid-cols-3 gap-4">
-              {skills[category].map((skill, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                  whileTap={{ scale: 0.8 }}
-                  className="text-center"
-                >
-                  <div>{skill.icon}</div>
-                  <p className="mt-2">{skill.name}</p>
-                </motion.div>
-              ))}
-            </div>
+    <h2 className="text-3xl font-bold mb-6 text-gold">{language === 'es' ? 'Habilidades' : 'Skills'}</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      {Object.keys(categories).map((category) => (
+        <div key={category}>
+          <h3 className="text-2xl font-bold mb-4 text-gold">{categories[category]}</h3>
+          <div className="grid grid-cols-3 gap-4">
+            {skills[category].map((skill, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.2, rotate: 10 }}
+                whileTap={{ scale: 0.8 }}
+                className="flex flex-col items-center text-center"
+              >
+                <div className="text-4xl mb-2">{skill.icon}</div>
+                <p className="mt-2">{skill.name}</p>
+              </motion.div>
+            ))}
           </div>
-        ))}
-      </div>
-    </section>
+        </div>
+      ))}
+    </div>
+  </section>
+  
   );
 };
 
