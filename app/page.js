@@ -138,23 +138,61 @@ export default function Home() {
   const translations = {
     es: {
       name: 'Fernando Gómez',
-      developer: 'Desarrollador Full Stack con más de 2 años de experiencia.',
+      developer: 'Desarrollador React Ssr. | Estudiante de Ingeniería en Sistemas',
       projectsTitle: 'Proyectos Destacados',
       aboutMeTitle: 'Sobre mí',
       aboutMeDescription: 'Soy un desarrollador full stack con experiencia en proyectos freelance y personales. Me especializo en React, Node.js, y MongoDB, y me apasiona crear soluciones eficientes. Siempre estoy buscando nuevas oportunidades de aprendizaje y crecimiento profesional.',
       skillsTitle: 'Habilidades',
       contactTitle: 'Contacto',
       contactDescription: '¿Tienes algún proyecto en mente? No dudes en contactarme a través de mi correo electrónico:',
+      projects: {
+        doflamingoJoyas: 'Tienda de joyas online con React, Tailwind CSS, Node.js y MongoDB.',
+        kaizenFitness: 'Plataforma de coaching online con React, Firebase y Tailwind CSS.',
+        cotizacionesYA: 'Aplicación web desarrollada de manera ágil y eficiente para obtener cotizaciones.',
+      },
+      contactForm: {
+        name: 'Nombre',
+        email: 'Email',
+        message: 'Mensaje',
+        placeholderName: 'Ingresa tu nombre',
+        placeholderEmail: 'Ingresa tu email',
+        placeholderMessage: 'Ingresa tu mensaje',
+        submit: 'Enviar',
+        errors: {
+          name: 'Por favor ingresa un nombre válido.',
+          email: 'Por favor ingresa un email válido.',
+          message: 'Por favor ingresa un mensaje válido.',
+        }
+      }
     },
     en: {
       name: 'Fernando Gómez',
-      developer: 'Full Stack Developer with over 2 years of experience.',
+      developer: 'Ssr React Developer | Systems Engineering Student',
       projectsTitle: 'Highlighted Projects',
       aboutMeTitle: 'About Me',
       aboutMeDescription: 'I am a full stack developer with experience in freelance and personal projects. I specialize in React, Node.js, and MongoDB, and I am passionate about creating efficient solutions. I am always looking for new learning and professional growth opportunities.',
       skillsTitle: 'Skills',
       contactTitle: 'Contact',
       contactDescription: 'Do you have a project in mind? Don’t hesitate to contact me at my email:',
+      projects: {
+        doflamingoJoyas: 'Online jewelry store built with React, Tailwind CSS, Node.js, and MongoDB.',
+        kaizenFitness: 'Online coaching platform built with React, Firebase, and Tailwind CSS.',
+        cotizacionesYA: 'Web application developed in an agile and efficient way to obtain quotes.',
+      },
+      contactForm: {
+        name: 'Name',
+        email: 'Email',
+        message: 'Message',
+        placeholderName: 'Enter your name',
+        placeholderEmail: 'Enter your email',
+        placeholderMessage: 'Enter your message',
+        submit: 'Send',
+        errors: {
+          name: 'Please enter a valid name.',
+          email: 'Please enter a valid email.',
+          message: 'Please enter a valid message.',
+        }
+      }
     },
   };
 
@@ -166,10 +204,10 @@ export default function Home() {
         </button>
         <button onClick={toggleLanguage} className="px-4 py-2 rounded flex items-center" aria-label="Toggle language">
     <Image 
-      src={language === 'es' ? 'https://flagcdn.com/w20/ar.png' : 'https://flagcdn.com/w20/us.png'} 
+      src={language === 'es' ? 'https://flagcdn.com/w40/ar.jpg' : 'https://flagcdn.com/w40/us.jpg'} 
       alt={language === 'es' ? 'Español' : 'English'} 
-      width={24} 
-      height={24} 
+      width={20} 
+      height={20} 
       className="mr-2" 
     />
     <span className="text-sm">{language === 'es' ? 'Español' : 'English'}</span>
@@ -200,37 +238,35 @@ export default function Home() {
       </section>
 
       <section id="projects" className="text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl font-bold mb-6 text-gold"
-        >
-          {translations[language].projectsTitle}
-        </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
-          <ProjectCard
-            title="Doflamingo Joyas"
-            description="Tienda de joyas online con React, Tailwind CSS, Node.js y MongoDB."
-            link="https://github.com/Ferdeveloperr/doflamingo-joyas"
-            video="https://res.cloudinary.com/dzzec7hzl/video/upload/v1730914170/20240911_121757_nfmvet.mp4"
-          />
-          <ProjectCard
-            title="Kaizen Fitness"
-            description="Plataforma de coaching online con React, Firebase y Tailwind CSS."
-            link="https://github.com/Ferdeveloperr/KaizenFrontend"
-            video="https://res.cloudinary.com/dzzec7hzl/video/upload/v1731007383/WhatsApp_Video_2024-11-07_at_4.19.50_PM_kibzkq.mp4"
-          />
-          
-          <ProjectCard 
-            title="CotizacionesYA"
-            description="Aplicacion web desarrollada de manera agil y eficiente para obtener cotizaciones"
-            link="https://github.com/Ferdeveloperr/CotizacionesYA"
-            video="https://res.cloudinary.com/dzzec7hzl/video/upload/v1731007393/WhatsApp_Video_2024-11-07_at_4.21.43_PM_woohxo.mp4"
-          />
-          </div>
-        
-      </section>
+  <motion.h2
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="text-3xl font-bold mb-6 text-gold"
+  >
+    {translations[language].projectsTitle}
+  </motion.h2>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+    <ProjectCard
+      title="Doflamingo Joyas"
+      description={translations[language].projects.doflamingoJoyas}
+      link="https://github.com/Ferdeveloperr/doflamingo-joyas"
+      video="https://res.cloudinary.com/dzzec7hzl/video/upload/v1732206202/WhatsApp_Video_2024-11-14_at_2.33.01_PM_jj4vaq.mp4"
+    />
+    <ProjectCard
+      title="Kaizen Fitness"
+      description={translations[language].projects.kaizenFitness}
+      link="https://github.com/Ferdeveloperr/KaizenFrontend"
+      video="https://res.cloudinary.com/dzzec7hzl/video/upload/v1732207110/WhatsApp_Video_2024-11-21_at_1.37.30_PM_bp9wbe.mp4"
+    />
+    <ProjectCard
+      title="CotizacionesYA"
+      description={translations[language].projects.cotizacionesYA}
+      link="https://github.com/Ferdeveloperr/CotizacionesYA"
+      video="https://res.cloudinary.com/dzzec7hzl/video/upload/v1731007393/WhatsApp_Video_2024-11-07_at_4.21.43_PM_woohxo.mp4"
+    />
+  </div>
+</section>
 
       <section className="mt-16 text-center">
         <h2 className="text-3xl font-bold mb-6 text-gold">{translations[language].aboutMeTitle}</h2>
@@ -242,58 +278,64 @@ export default function Home() {
       <SkillsSection language={language} translations={translations} skills={skills} />
 
       <section id="contact" className="text-center mt-16">
-        <h2 className="text-3xl font-bold mb-6 text-gold">{translations[language].contactTitle}</h2>
-        <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-8 rounded-lg" style={{ backgroundColor: '#000', borderColor: '#d4af37', borderWidth: '2px' }}>
-          <div className="mb-4">
-            <label htmlFor="nombre" className="block text-white font-bold mb-2">Nombre</label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              placeholder='Ingresa tu nombre'
-              value={formData.nombre}
-              onChange={handleChange}
-              onBlur={() => validateField('nombre', formData.nombre)}
-              className="w-full p-2 rounded bg-white text-black border border-gray-500"
-            />
-            {formErrors.nombre && <span className="text-red-500">{formErrors.nombre}</span>}
-          </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-white font-bold mb-2">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder='Ingresa tu email'
-              value={formData.email}
-              onChange={handleChange}
-              onBlur={() => validateField('email', formData.email)}
-              className="w-full p-2 rounded bg-white text-black border border-gray-500"
-            />
-            {formErrors.email && <span className="text-red-500">{formErrors.email}</span>}
-          </div>
-          <div className="mb-4">
-            <label htmlFor="mensaje" className="block text-white font-bold mb-2">Mensaje</label>
-            <textarea
-              id="mensaje"
-              name="mensaje"
-              placeholder='Ingresa tu mensaje'
-              value={formData.mensaje}
-              onChange={handleChange}
-              onBlur={() => validateField('mensaje', formData.mensaje)}
-              className="w-full p-2 rounded bg-white text-black border border-gray-500"
-            ></textarea>
-            {formErrors.mensaje && <span className="text-red-500">{formErrors.mensaje}</span>}
-          </div>
-          <button
-            type="submit"
-            className="w-full py-2 px-4 bg-gold text-black font-bold rounded hover:bg-black hover:text-gold transition-colors"
-            disabled={sending}
-          >
-            {sending ? <ClipLoader size={24} color={'#000'} /> : 'Enviar'}
-          </button>
-        </form>
-      </section>
+  <h2 className="text-3xl font-bold mb-6 text-gold">{translations[language].contactTitle}</h2>
+  <form onSubmit={handleSubmit} className="max-w-lg mx-auto p-8 rounded-lg" style={{ backgroundColor: '#000', borderColor: '#d4af37', borderWidth: '2px' }}>
+    <div className="mb-4">
+      <label htmlFor="nombre" className="block text-white font-bold mb-2">
+        {translations[language].contactForm.name}
+      </label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder={translations[language].contactForm.placeholderName}
+        value={formData.nombre}
+        onChange={handleChange}
+        onBlur={() => validateField('nombre', formData.nombre)}
+        className="w-full p-2 rounded bg-white text-black border border-gray-500"
+      />
+      {formErrors.nombre && <span className="text-red-500">{translations[language].contactForm.errors.name}</span>}
+    </div>
+    <div className="mb-4">
+      <label htmlFor="email" className="block text-white font-bold mb-2">
+        {translations[language].contactForm.email}
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder={translations[language].contactForm.placeholderEmail}
+        value={formData.email}
+        onChange={handleChange}
+        onBlur={() => validateField('email', formData.email)}
+        className="w-full p-2 rounded bg-white text-black border border-gray-500"
+      />
+      {formErrors.email && <span className="text-red-500">{translations[language].contactForm.errors.email}</span>}
+    </div>
+    <div className="mb-4">
+      <label htmlFor="mensaje" className="block text-white font-bold mb-2">
+        {translations[language].contactForm.message}
+      </label>
+      <textarea
+        id="mensaje"
+        name="mensaje"
+        placeholder={translations[language].contactForm.placeholderMessage}
+        value={formData.mensaje}
+        onChange={handleChange}
+        onBlur={() => validateField('mensaje', formData.mensaje)}
+        className="w-full p-2 rounded bg-white text-black border border-gray-500"
+      ></textarea>
+      {formErrors.mensaje && <span className="text-red-500">{translations[language].contactForm.errors.message}</span>}
+    </div>
+    <button
+      type="submit"
+      className="w-full py-2 px-4 bg-gold text-black font-bold rounded hover:bg-black hover:text-gold transition-colors"
+      disabled={sending}
+    >
+      {sending ? <ClipLoader size={24} color={'#000'} /> : translations[language].contactForm.submit}
+    </button>
+  </form>
+</section>
 
       <footer className="mt-12 text-center">
         <p className="text-sm">&copy; 2024 Fernando Gómez. Todos los derechos reservados.</p>
