@@ -237,36 +237,36 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="text-center">
-  <motion.h2
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    className="text-3xl font-bold mb-6 text-gold"
-  >
-    {translations[language].projectsTitle}
-  </motion.h2>
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
-    <ProjectCard
-      title="Doflamingo Joyas"
-      description={translations[language].projects.doflamingoJoyas}
-      link="https://github.com/Ferdeveloperr/doflamingo-joyas"
-      video="https://res.cloudinary.com/dzzec7hzl/video/upload/v1732206202/WhatsApp_Video_2024-11-14_at_2.33.01_PM_jj4vaq.mp4"
-    />
-    <ProjectCard
-      title="Kaizen Fitness"
-      description={translations[language].projects.kaizenFitness}
-      link="https://github.com/Ferdeveloperr/KaizenFrontend"
-      video="https://res.cloudinary.com/dzzec7hzl/video/upload/v1732207110/WhatsApp_Video_2024-11-21_at_1.37.30_PM_bp9wbe.mp4"
-    />
-    <ProjectCard
-      title="CotizacionesYA"
-      description={translations[language].projects.cotizacionesYA}
-      link="https://github.com/Ferdeveloperr/CotizacionesYA"
-      video="https://res.cloudinary.com/dzzec7hzl/video/upload/v1731007393/WhatsApp_Video_2024-11-07_at_4.21.43_PM_woohxo.mp4"
-    />
-  </div>
-</section>
+            <section id="projects" className="text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-3xl font-bold mb-6 text-gold"
+        >
+          {translations[language].projectsTitle}
+        </motion.h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <ProjectCard
+            title="Doflamingo Joyas"
+            description={translations[language].projects.doflamingoJoyas}
+            link="https://github.com/Ferdeveloperr/doflamingo-joyas"
+            video="https://res.cloudinary.com/dzzec7hzl/video/upload/v1732206202/WhatsApp_Video_2024-11-14_at_2.33.01_PM_jj4vaq.mp4"
+          />
+          <ProjectCard
+            title="Kaizen Fitness"
+            description={translations[language].projects.kaizenFitness}
+            link="https://github.com/Ferdeveloperr/KaizenFrontend"
+            video="https://res.cloudinary.com/dzzec7hzl/video/upload/v1732207110/WhatsApp_Video_2024-11-21_at_1.37.30_PM_bp9wbe.mp4"
+          />
+          <ProjectCard
+            title="CotizacionesYA"
+            description={translations[language].projects.cotizacionesYA}
+            link="https://github.com/Ferdeveloperr/CotizacionesYA"
+            video="https://res.cloudinary.com/dzzec7hzl/video/upload/v1731007393/WhatsApp_Video_2024-11-07_at_4.21.43_PM_woohxo.mp4"
+          />
+        </div>
+      </section>
 
       <section className="mt-16 text-center">
         <h2 className="text-3xl font-bold mb-6 text-gold">{translations[language].aboutMeTitle}</h2>
